@@ -9,6 +9,7 @@ export class ValuesController extends BaseController {
       .post('', this.create)
       .delete('/:valueId', this.remove)
   }
+  // ( https://yourdomain.com/api/ ) values/asdfasdtahsj
 
   /**
    * Sends found values to a client by request
@@ -18,7 +19,9 @@ export class ValuesController extends BaseController {
    */
   async getAll(req, res, next) {
     try {
+      // Knight Waits here for castle servents to get the data they requested
       const values = await valuesService.find()
+      // Knight returns home with data
       return res.send(values)
     } catch (error) {
       next(error)
